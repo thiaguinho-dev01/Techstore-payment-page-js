@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Calculadora TechStore</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <main class="container">
+    <h1>Calculadora TechStore</h1>
+    <p class="subtitulo">Simule o valor final do seu pedido.</p>
+
+    <form id="form-orcamento">
+      <label for="valor-produto">Valor do produto (R$)</label>
+      <input type="number" id="valor-produto" min="0" step="0.01" placeholder="0,00" required>
+
+      <label for="forma-pagamento">Forma de pagamento</label>
+      <select id="forma-pagamento" required>
+        <option value="">Selecione...</option>
+        <option value="pix">PIX (15% de desconto)</option>
+        <option value="boleto">Boleto (10% de desconto)</option>
+        <option value="cartao-vista">Cartão à Vista (5% de desconto)</option>
+        <option value="cartao-parcelado">Cartão Parcelado (sem desconto)</option>
+      </select>
+
+      <label for="tipo-entrega">Tipo de entrega</label>
+      <select id="tipo-entrega" required>
+        <option value="">Selecione...</option>
+        <option value="retirada">Retirada (R$ 0,00)</option>
+        <option value="padrao">Entrega Padrão (R$ 12,00)</option>
+        <option value="expressa">Expressa (R$ 25,00)</option>
+        <option value="super-expressa">Super Expressa (R$ 45,00)</option>
+      </select>
+
+      <button type="submit">Calcular orçamento</button>
+    </form>
+
+    <section id="resultado" class="hidden" aria-live="polite">
+      <h2>Resumo do pedido</h2>
+      <dl>
+        <div><dt>Valor do produto</dt><dd id="res-produto"></dd></div>
+        <div><dt>Desconto</dt><dd id="res-desconto"></dd></div>
+        <div><dt>Frete</dt><dd id="res-frete"></dd></div>
+        <div class="total"><dt>Total final</dt><dd id="res-total"></dd></div>
+      </dl>
+    </section>
+  </main>
+  <script src="js/main.js"></script>
+</body>
+</html>
